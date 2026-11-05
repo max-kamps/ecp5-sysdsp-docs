@@ -22,12 +22,12 @@ Each DSP block contains two DSP slices. Each slice contains:
     - ALU54:
         - 54-bit accumulator
         - 54-bit ternary adder
-            - Operations: A +- B +- C
+            - Operation: `A ± B ± C`
             - operands can be external or routed internally from the accumulator
             - operands can be dynamically signed or unsigned
             - 2× 36-bit external inputs, and 1× 54-bit external input
         - Logic unit
-            - Operations: AND, OR, NAND, NOR, XOR, XNOR
+            - Operations: `AND`, `OR`, `NAND`, `NOR`, `XOR`, `XNOR`
             - operands can be external or routed internally from the accumulator
             - 1× 36-bit external input, and 1× 54-bit external input
         - Flag outputs
@@ -48,7 +48,7 @@ Each DSP block contains two DSP slices. Each slice contains:
     - ALU24:
         - 24-bit accumulator
         - 24-bit ternary adder
-            - Operations: A +- B + C ?
+            - Operation: `A ± B + C` ?
             - operands can be external or routed internally from the accumulator
             - operands can be dynamically signed or unsigned
             - 2× 18-bit external inputs, and 1× 24-bit external input
@@ -93,7 +93,7 @@ TODO
     - `{A,B}[17:0]`
         - Parallel input operands
     - `SRI{A,B}[17:0]`
-        - Shift register input operands
+        - Shift register input operands (hardwired to the adjacent MULT's `SRO{A,B}` output)
     - `SOURCE{A,B}`
         - Take operands from parallel input or shift register input?
         - `0` = parallel input, `1` = shift register input
@@ -104,7 +104,7 @@ TODO
     - `RO{A,B}[17:0]`
         - Registered value of the parallel input
     - `SRO{A,B}[17:0]`
-        - Registered value of the shift input
+        - Registered value of the shift input (hardwired to the adjacent MULT's `SRI{A,B}` input)
     - `P[35:0]`
         - Product output
     - `SIGNEDP`
