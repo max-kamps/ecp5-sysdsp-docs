@@ -9,6 +9,7 @@
     - Contains some information that was left out of the ECP5 documentation, as well extra diagrams
 - Lattice Diamond 3.14 FPGA Libraries Reference Guide
     - Contains extra documentation for some config attributes and ports of primitives
+- `lscc/diamond/3.14/cae_library/simulation/verilog/ecp5u/<name>.v`
 - `lscc/diamond/3.14/cae_library/synthesis/verilog/ecp5um.v`
     - Contains the full list of ports, attributes (with default values), as well as a few comments
 - Lattice Diamond Clarity Designer
